@@ -1,0 +1,36 @@
+.array-container {
+  height: 500px;
+  width: 750px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.array-bar {
+  width: 10px;
+  background-color: lightskyblue;
+  display: inline-block; /* to keep block adjacent */
+  margin-right: 2px;
+  margin-left: 2px;
+}
+.array-bar1 {
+  width: 1px;
+  background-color: white;
+  display: inline-block; /* to keep block adjacent */
+}
+.generate {
+  position: relative;
+  top: 30px;
+  margin: 0px 20px;
+  background-color: black;
+  font-weight: bold;
+  color: white;
+}
+.srt {
+  position: relative;
+  top: 30px;
+  margin: 0px 3px;
+  background-color: white;
+}
+.navbar {
+  height: 100px;
+  background-color: darkblue;
+}
