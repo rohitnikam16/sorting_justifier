@@ -40,6 +40,12 @@ export default class sortingvisualizer extends React.Component {
   }
 
   mergeSort() {
+    document.getElementById("b1").style.pointerEvents = "none";
+    document.getElementById("b2").style.pointerEvents = "none";
+    document.getElementById("b3").style.pointerEvents = "none";
+    document.getElementById("b4").style.pointerEvents = "none";
+    document.getElementById("b5").style.pointerEvents = "none";
+    document.getElementById("g1").style.pointerEvents = "none";
     const animations = getMergeSortAnimations(this.state.array);
     this.func(animations.length);
     for (let i = 0; i < animations.length; i++) {
@@ -67,6 +73,12 @@ export default class sortingvisualizer extends React.Component {
   }
 
   quickSort() {
+    document.getElementById("b1").style.pointerEvents = "none";
+    document.getElementById("b2").style.pointerEvents = "none";
+    document.getElementById("b3").style.pointerEvents = "none";
+    document.getElementById("b4").style.pointerEvents = "none";
+    document.getElementById("b5").style.pointerEvents = "none";
+    document.getElementById("g1").style.pointerEvents = "none";
     const animations = getQuickSortAnimations(this.state.array);
     this.func(animations.length);
     const arrayBars = document.getElementsByClassName("array-bar");
@@ -101,6 +113,12 @@ export default class sortingvisualizer extends React.Component {
     }
   }
   bubbleSort() {
+    document.getElementById("b1").style.pointerEvents = "none";
+    document.getElementById("b2").style.pointerEvents = "none";
+    document.getElementById("b3").style.pointerEvents = "none";
+    document.getElementById("b4").style.pointerEvents = "none";
+    document.getElementById("b5").style.pointerEvents = "none";
+    document.getElementById("g1").style.pointerEvents = "none";
     const animations = getBubbleSortAnimations(this.state.array);
     this.func(animations.length);
     const arrayBars = document.getElementsByClassName("array-bar");
@@ -121,6 +139,12 @@ export default class sortingvisualizer extends React.Component {
     }
   }
   insertionSort() {
+    document.getElementById("b1").style.pointerEvents = "none";
+    document.getElementById("b2").style.pointerEvents = "none";
+    document.getElementById("b3").style.pointerEvents = "none";
+    document.getElementById("b4").style.pointerEvents = "none";
+    document.getElementById("b5").style.pointerEvents = "none";
+    document.getElementById("g1").style.pointerEvents = "none";
     const animations = getInsertionSortAnimations(this.state.array);
     this.func(animations.length);
     for (let i = 0; i < animations.length; i++) {
@@ -157,6 +181,12 @@ export default class sortingvisualizer extends React.Component {
     }
   }
   heapSort() {
+    document.getElementById("b1").style.pointerEvents = "none";
+    document.getElementById("b2").style.pointerEvents = "none";
+    document.getElementById("b3").style.pointerEvents = "none";
+    document.getElementById("b4").style.pointerEvents = "none";
+    document.getElementById("b5").style.pointerEvents = "none";
+    document.getElementById("g1").style.pointerEvents = "none";
     const animations = getHeapSortAnimations(this.state.array);
     this.func(animations.length);
     for (let i = 0; i < animations.length; i++) {
@@ -198,19 +228,13 @@ export default class sortingvisualizer extends React.Component {
   }
 
   func = (i) => {
-    this.setState({
-      disabled: true,
-    });
     setTimeout(() => {
-      if (this.state.disabled == true) {
-        this.setState({
-          disabled: false,
-        });
-      } else {
-        this.setState({
-          disabled: true,
-        });
-      }
+      document.getElementById("b1").style.pointerEvents = "auto";
+      document.getElementById("b2").style.pointerEvents = "auto";
+      document.getElementById("b3").style.pointerEvents = "auto";
+      document.getElementById("b4").style.pointerEvents = "auto";
+      document.getElementById("b5").style.pointerEvents = "auto";
+      document.getElementById("g1").style.pointerEvents = "auto";
     }, i * ANIMATION_SPEED_MS);
   };
 
