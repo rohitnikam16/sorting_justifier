@@ -3,7 +3,7 @@ Sorting Justifier!!
 ----------------------------
 
 
-This project aims to vsualize and understand different sorting algrithms.
+This project aims to vsualize and understand different sorting algorithms.
 
 -merge sort
 
