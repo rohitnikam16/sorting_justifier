@@ -13,7 +13,7 @@ const ANIMATION_SPEED_MS = 15;
 
 // Change this value for the number of bars (value) in the array.
 const NUMBER_OF_ARRAY_BARS = 50;
-var mx = 0;
+
 export default class sortingvisualizer extends React.Component {
   constructor(props) {
     super(props);
@@ -22,6 +22,9 @@ export default class sortingvisualizer extends React.Component {
       array: [],
     };
   }
+  state = {
+    disabled: false,
+  };
 
   componentDidMount() {
     this.resetArray();
@@ -38,6 +41,7 @@ export default class sortingvisualizer extends React.Component {
 
   mergeSort() {
     const animations = getMergeSortAnimations(this.state.array);
+    this.func(animations.length);
     for (let i = 0; i < animations.length; i++) {
       const arrayBars = document.getElementsByClassName("array-bar");
       const colourChange = i % 4;
@@ -61,8 +65,10 @@ export default class sortingvisualizer extends React.Component {
       }
     }
   }
+
   quickSort() {
     const animations = getQuickSortAnimations(this.state.array);
+    this.func(animations.length);
     const arrayBars = document.getElementsByClassName("array-bar");
     for (let i = 0; i < animations.length; i++) {
       const [bar1, bar2] = animations[i];
@@ -96,6 +102,7 @@ export default class sortingvisualizer extends React.Component {
   }
   bubbleSort() {
     const animations = getBubbleSortAnimations(this.state.array);
+    this.func(animations.length);
     const arrayBars = document.getElementsByClassName("array-bar");
     for (let i = 0; i < animations.length; i++) {
       const [bar1, bar2] = animations[i];
@@ -115,6 +122,7 @@ export default class sortingvisualizer extends React.Component {
   }
   insertionSort() {
     const animations = getInsertionSortAnimations(this.state.array);
+    this.func(animations.length);
     for (let i = 0; i < animations.length; i++) {
       const [idx, cmd] = animations[i];
       const arrayBars = document.getElementsByClassName("array-bar");
@@ -150,6 +158,7 @@ export default class sortingvisualizer extends React.Component {
   }
   heapSort() {
     const animations = getHeapSortAnimations(this.state.array);
+    this.func(animations.length);
     for (let i = 0; i < animations.length; i++) {
       const [idx, cmd] = animations[i];
       const arrayBars = document.getElementsByClassName("array-bar");
@@ -188,28 +197,75 @@ export default class sortingvisualizer extends React.Component {
     }
   }
 
+  func = (i) => {
+    this.setState({
+      disabled: true,
+    });
+    setTimeout(() => {
+      if (this.state.disabled == true) {
+        this.setState({
+          disabled: false,
+        });
+      } else {
+        this.setState({
+          disabled: true,
+        });
+      }
+    }, i * ANIMATION_SPEED_MS);
+  };
+
   render() {
     const { array } = this.state;
 
     return (
       <>
         <div className="navbar">
-          <button className="generate" onClick={() => this.resetArray()}>
+          <button
+            id="g1"
+            disabled={this.state.disabled}
+            className="generate"
+            onClick={() => this.resetArray()}
+          >
             Generate new array
           </button>
-          <button className="srt" onClick={() => this.mergeSort()}>
+          <button
+            id="b1"
+            disabled={this.state.disabled}
+            className="srt"
+            onClick={() => this.mergeSort()}
+          >
             Merge Sort
           </button>
-          <button className="srt" onClick={() => this.quickSort()}>
+          <button
+            id="b2"
+            disabled={this.state.disabled}
+            className="srt"
+            onClick={() => this.quickSort()}
+          >
             Quick Sort
           </button>
-          <button className="srt" onClick={() => this.bubbleSort()}>
+          <button
+            id="b3"
+            disabled={this.state.disabled}
+            className="srt"
+            onClick={() => this.bubbleSort()}
+          >
             Bubble Sort
           </button>
-          <button className="srt" onClick={() => this.insertionSort()}>
+          <button
+            id="b4"
+            disabled={this.state.disabled}
+            className="srt"
+            onClick={() => this.insertionSort()}
+          >
             Insertion Sort
           </button>
-          <button className="srt" onClick={() => this.heapSort()}>
+          <button
+            id="b5"
+            disabled={this.state.disabled}
+            className="srt"
+            onClick={() => this.heapSort()}
+          >
             Heap Sort
           </button>
         </div>
