@@ -1,0 +1,77 @@
+
+-----------------------------------------------------
+		Merge Sort
+
+
+Here basically to get a array sorted ,we merge two eqally sized sorted parts of array into one array.
+And to get those parts sorted we do same thing we are doing for main array, this happens recursively 
+for every part and when we get 2 elements as 2 part we just compare and return them sorted.
+complexity O(nlogn).
+
+Here when we compare bars of two sorted array ,we colour them as red, and the index where the smaller
+ element will be placed is coloured dark blue.
+
+
+-----------------------------------------------------
+		Insertion Sort
+
+
+Here, we traverse the array and as we encounter an element shorter than previous one, we place that 
+element at position (in traversed part of array) where previous element is shorter and next element 
+is greater.this process continues until we hit the end of array.
+
+We colour an bar red when that bar is less than previous one and need to be placed,  so we find 
+appropriate position for his bar, we colour the bars dark blue indicating that upto this bar we have 
+searched position for our given red bar , if we found appropriate position we stop the search and place 
+our red bar at that poition. then that placed bar is coloured green indicating that now that bar is 
+properly placed.
+At any point of time the sequence of green bars shows that,that group of arrays are sorted.
+
+
+------------------------------------------------------
+		Bubble Sort
+
+
+Here, we traverse the array and as we encounter an element shorter than previous one,we swap these two 
+elements, and then continue traversing the array and again repeat the previous process wehn we encounter
+an element shorter than previous one.As, a result when we reach end of the array,we get largest element 
+in the array at last index.
+Repeat above precess n times (n=size of array)
+
+We colour the bars red when we are comparing them and colour a bar red when the larger elemnents are 
+placed in their correct position.
+
+
+------------------------------------------------------
+		Quick Sort
+
+
+Here, we take last element and put it at position where all the elements at right are larger and all 
+the element at left are smaller than this current element.This operations puts the element at place 
+where it should be after sorting that array.After placing the last element repeat the same process 
+for the two parts that are before and after the new position of last element.Repeat this process 
+recursively.
+
+We colour an element red when we are finding position for it, and then place it at its correct position and
+colour it green. This process continue until all elements are turned green i.e all element are placed at 
+position where they should be after sorting.	
+
+
+-------------------------------------------------------
+		Heap Sort
+
+
+Here, using heapify method we first build a max heap, and then delete the root element ,place last element at 
+root's place,apply heapify method,and then place that deleted element at last index of original array(after 
+deletion array size decreases by one). In this way, at each step we get largest elements at last.And, after 
+deleting all element we get a sorted array.
+
+First, while building a max heap, we start doing heapify from elemnt n/2 to 1.So when we compare a node with
+its children , we colour them red and after heapify is done we colour them dark blue.When max heap is build 
+all elements will be dark blue indcating max heap is build.
+when we delete the root element we place it in last element of the array , and colour it green and place the
+last element at postion of root element and then heapify it.Again while doing heapify we colour the bars red 
+indicating that these elements are being compared.After deleting all the elements , every bar must have been 
+turned green by then,indicaing the array is sorted now.
+
+--------------------------------------------------------
