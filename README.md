@@ -19,4 +19,4 @@ This project aims to vsualize and understand different sorting algorithms.
 -----------------------------
 
 
-For deailed understanding please read documentation text file.
+For detailed understanding please read documentation text file.
